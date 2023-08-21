@@ -754,14 +754,14 @@ export default function Direct() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. $
+                                    Min. 
                                     {item.minUserTokenStake.length > 8
                                       ? (
                                           parseFloat(item.minUserTokenStake) /
                                           1e18
                                         ).toString()
                                       : (parseFloat(item.minUserTokenStake)).toFixed(0)}{" "}
-                                    P2PBIT - Max. ${item.maxUserTokenStake.length > 8
+                                    P2PBIT - Max. {item.maxUserTokenStake.length > 8
                                       ? (
                                           parseFloat(item.maxUserTokenStake) /
                                           1e18
