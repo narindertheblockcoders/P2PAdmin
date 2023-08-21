@@ -10,6 +10,9 @@ import { CopyToClipboard } from "react-copy-to-clipboard";
 import { Tooltip } from "@nextui-org/react";
 import ContractInterface from "../old-staking-contract.json";
 import { parseEther } from "viem";
+import { Modal, Button, Table } from "@nextui-org/react";
+import Backdrop from "@mui/material/Backdrop";
+import CircularProgress from "@mui/material/CircularProgress";
 // import { BigNumber } from "@ethersproject/bignumber";
 export default function StakeAddData() {
   // let userAddress;
@@ -24,6 +27,7 @@ export default function StakeAddData() {
   const [emailError, setEmailError] = useState();
   const [getAddress, setGetAddress] = useState();
   const [stakeData, setStakeData] = useState();
+  const [show4, setShow4] = useState(false);
 
   const router = useRouter();
   const { address } = useAccount();
@@ -38,13 +42,16 @@ export default function StakeAddData() {
   const _amount = tokenStaked;
   const timeInvested = stakedTime;
 
-  console.log( userId,
+  console.log(
+    userId,
     userAddress,
     parseEther(`${_amount}`),
     new Date(timeInvested)?.getTime() / 1000,
-    new Date(claimTime)?.getTime() / 1000,"first")
+    new Date(claimTime)?.getTime() / 1000,
+    "first"
+  );
 
-  const contract = stakeData?.contractAddress
+  const contract = stakeData?.contractAddress;
   const { write: write } = useContractWrite({
     mode: "args",
     address: contract,
@@ -59,19 +66,20 @@ export default function StakeAddData() {
       parseEther(`${_amount}`),
       new Date(timeInvested)?.getTime() / 1000,
       new Date(claimTime)?.getTime() / 1000,
-
     ],
+  
     onError(error) {
       console.log(error, "error stake");
       // setOpen(false);
     },
     async onSuccess(data) {
-      // setOpen(true);
+      setOpen(true);
       // setShow(false);
       console.log(data, "data");
       let tx = await data.wait();
       console.log(tx, "tx");
       setOpen(false);
+      setShow4(true);
       // getData();
     },
   });
@@ -139,7 +147,18 @@ export default function StakeAddData() {
     disconnect();
   };
 
+  async function modalReloadFn() {
+    setShow4(false);
+    window.location.reload();
+  }
+
   return (
+    <>   <Backdrop
+    sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+    open={open}
+  >
+    <CircularProgress color="inherit" />
+  </Backdrop>
     <section class="dashboard">
       <ToastContainer position="top-center" theme="dark" />
       <div class="dashboard-left">
@@ -380,7 +399,7 @@ export default function StakeAddData() {
             <p>
               <img src="/dash-btn.png" atl="" />
             </p>{" "}
-            <span>{userAddress}</span>
+            <span>{maskedStr}</span>
           </a>
         </div>
       </div>
@@ -679,6 +698,31 @@ export default function StakeAddData() {
           </div>
         </div>
       </div>
+
+      <Modal
+        closeButton={false}
+        blur
+        aria-labelledby="modal-title"
+        open={show4}
+        className="staking-modal"
+      >
+        <Modal.Body>
+          <h3 style={{ textAlign: "center", fontSize: "20px" }}>
+            Record Successfully Submit{" "}
+          </h3>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="connect-wallet"
+            auto
+            flat
+            onPress={() => modalReloadFn()}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </section>
+    </>
   );
 }

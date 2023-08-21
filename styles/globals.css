@@ -13273,8 +13273,8 @@ line-height: 28px;
 #stacking-cards1 {
   /* justify-content: space-around !important; */
   justify-content: flex-start;
- gap: 50px;
-
+  gap: 50px;
+  flex-wrap: wrap;
 }
 
 #stacking-cards1 .live {

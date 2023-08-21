@@ -15,6 +15,9 @@ import { parseEther } from "viem";
 import { Modal, Button, Table, Tooltip } from "@nextui-org/react";
 import { ethers } from "ethers";
 import { useRouter } from "next/router";
+// import Modal from "react-bootstrap/Modal";
+
+
 
 // let stakeId;
 let userAddress;
@@ -25,6 +28,7 @@ export default function OldStaking() {
   const [show1, setShow1] = useState(false);
   const [show2, setShow2] = useState(false);
   const [show3, setShow3] = useState(false);
+  const [show4, setShow4] = useState(false)
 
   const [id, setId] = useState("");
   const [contractAddress, setContractAddress] = useState();
@@ -100,6 +104,7 @@ export default function OldStaking() {
       let tx = await data.wait();
       console.log(tx, "tx");
       setOpen(false);
+      setShow4(true)
       getData();
     },
   });
@@ -337,6 +342,13 @@ export default function OldStaking() {
     localStorage.setItem("userId",e)
     router.push("/stakeAddData/");
   }
+
+
+  async function modalReloadFn (){
+    setShow4(false)
+    window.location.reload()
+  }
+
 
   return (
     <>
@@ -1563,6 +1575,31 @@ export default function OldStaking() {
           </Button>
         </Modal.Footer>
       </Modal>
+
+
+      <Modal
+        closeButton={false}
+        blur
+        aria-labelledby="modal-title"
+        open={show4}
+        className="staking-modal"
+      >
+        <Modal.Body>
+          <h3 style={{ textAlign: "center", fontSize:"20px" }}>
+          Please wait for 2-3 min. for Staking Data          </h3>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button
+            className="connect-wallet"
+            auto
+            flat
+            onPress={() => modalReloadFn()}
+          >
+            Close
+          </Button>
+        </Modal.Footer>
+      </Modal>
+
 
       <Modal
         closeButton={false}
