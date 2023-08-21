@@ -92,6 +92,7 @@ export default function StakeAddData() {
 
   async function stakingData() {
     try {
+      setOpen(true)
       // const token = localStorage.getItem("token");
       const userId = localStorage.getItem("userId");
       console.log(userId, "userId here");
@@ -102,7 +103,7 @@ export default function StakeAddData() {
       const response = res.data.data.data;
       setStakeData(response);
       console.log(response, "add data status");
-
+   setOpen(false)
       const prefix = response?.contractAddress.substring(0, 4);
 
       const suffix = response?.contractAddress.substring(

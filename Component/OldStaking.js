@@ -764,7 +764,7 @@ export default function OldStaking() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. $
+                                    Min. 
                                     {item.minUserTokenStake.length > 8
                                       ? (
                                           parseFloat(item.minUserTokenStake) /
@@ -773,7 +773,7 @@ export default function OldStaking() {
                                       : parseFloat(
                                           item.minUserTokenStake
                                         ).toFixed(0)}{" "}
-                                    P2PBIT - Max. $
+                                    P2PBIT - Max. 
                                     {item.maxUserTokenStake.length > 8
                                       ? (
                                           parseFloat(item.maxUserTokenStake) /
