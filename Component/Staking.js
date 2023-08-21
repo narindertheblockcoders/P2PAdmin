@@ -17,7 +17,7 @@ import { ethers } from "ethers";
 
 // let stakeId;
 let userAddress;
-let tokenAddress = "0x45d12b59b965880c9f8a38efdba3075631e70caf";
+let tokenAddress = "0x7Bbf85d26B305A030916be29Aa9d754eE0F8bF60";
 export default function Direct() {
   const dataFetchedRef = useRef(false);
   const [show, setShow] = useState(false);
@@ -71,7 +71,7 @@ export default function Direct() {
 
   const { write: write } = useContractWrite({
     mode: "args",
-    address: "0x046a99EA8353A68dA2f69b1c67A5A5FFe28c741E",
+    address: "0x4114A40EB76a059eADb157fD9C80F5e85C0b484B",
     abi: ContractInterface,
     functionName: "startNewStaking",
     overrides: {
@@ -133,7 +133,7 @@ export default function Direct() {
 
   const { write: Approval } = useContractWrite({
     mode: "args",
-    address: "0x45d12b59b965880c9f8a38efdba3075631e70caf",
+    address: "0x7Bbf85d26B305A030916be29Aa9d754eE0F8bF60",
     abi: tokenAbi,
     functionName: "approve",
     overrides: {
@@ -190,7 +190,7 @@ export default function Direct() {
     console.log(response, "response staking heee");
     const testData = response.data.data.data?.map(async (item) => {
       const provider = new ethers.providers.JsonRpcProvider(
-        "https://rpc-mumbai.maticvigil.com"
+        "https://polygon-rpc.com"
       );
       let daiContract;
       let getStakingId;
@@ -754,7 +754,7 @@ export default function Direct() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. 
+                                    Min. $
                                     {item.minUserTokenStake.length > 8
                                       ? (
                                           parseFloat(item.minUserTokenStake) /
