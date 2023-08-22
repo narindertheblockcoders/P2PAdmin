@@ -78,7 +78,7 @@ export default function OldStaking() {
 
   const { write: write } = useContractWrite({
     mode: "args",
-    address: "0xEb0807CD606Bd49E5cE35a54169D3ee2754B54E6",
+    address: "0x6b76d449940ab5ef852a6fa2c232223d3cb9b4a6",
     abi: ContractInterface,
     functionName: "startNewStaking",
     overrides: {
