@@ -388,8 +388,8 @@ export default function Direct() {
                   Dashboard
                 </a>
               </li> */}
-   
-      
+
+
               <li>
                 <div
                   class="accordion accordion-flush"
@@ -449,39 +449,39 @@ export default function Direct() {
                   </div>
                 </div>
               </li>
-              
+
               <li>
-              <a href="/oldStaking">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="24"
-                  height="21.805"
-                  viewBox="0 0 24 21.805"
-                >
-                  <g
-                    id="Group_17240"
-                    data-name="Group 17240"
-                    transform="translate(-131.5 -291.1)"
+                <a href="/oldStaking">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="24"
+                    height="21.805"
+                    viewBox="0 0 24 21.805"
                   >
-                    <path
-                      id="Path_10935"
-                      data-name="Path 10935"
-                      d="M26,16.92a3,3,0,0,0-2.4-2.94V12.12a3,3,0,0,0-3-3h-.952L14.32,3.792a3,3,0,0,0-4.242,0L4.724,9.149A2.993,2.993,0,0,0,2,12.12v9.6a3,3,0,0,0,3,3H20.6a3,3,0,0,0,3-3V19.86A3,3,0,0,0,26,16.92ZM10.928,4.642a1.8,1.8,0,0,1,2.545,0L17.952,9.12H6.448ZM20.6,23.52H5a1.8,1.8,0,0,1-1.8-1.8v-9.6A1.8,1.8,0,0,1,5,10.32H20.6a1.8,1.8,0,0,1,1.8,1.8v1.8H20.6a3,3,0,1,0,0,6h1.8v1.8a1.8,1.8,0,0,1-1.8,1.8Zm2.4-4.8H20.6a1.8,1.8,0,0,1,0-3.6H23a1.8,1.8,0,0,1,0,3.6Z"
-                      transform="translate(129.5 288.185)"
-                      fill="#ccd0db"
-                    />
-                    <path
-                      id="Path_10939"
-                      data-name="Path 10939"
-                      d="M132.238,12.161a2.221,2.221,0,0,0-1.151-1.151,2.069,2.069,0,0,0-.844-.174h-4.409v5.17h-.644v.95h.644v.89h1.85v-.89h.7v-.95h-.7V12.6a.394.394,0,0,1,.106-.278.354.354,0,0,1,.271-.113h1.73a.8.8,0,1,1,0,1.595h-.511a.59.59,0,0,0-.294.053.8.8,0,0,0-.2.248l-.557,1.084h2.016a2.05,2.05,0,0,0,.844-.174,2.2,2.2,0,0,0,1.151-1.158A2.119,2.119,0,0,0,132.41,13a2.063,2.063,0,0,0-.173-.842"
-                      transform="translate(11.09 290.766)"
-                      fill="#ccd0db"
-                    />
-                  </g>
-                </svg>
-                Old Staking
-              </a>
-            </li>
+                    <g
+                      id="Group_17240"
+                      data-name="Group 17240"
+                      transform="translate(-131.5 -291.1)"
+                    >
+                      <path
+                        id="Path_10935"
+                        data-name="Path 10935"
+                        d="M26,16.92a3,3,0,0,0-2.4-2.94V12.12a3,3,0,0,0-3-3h-.952L14.32,3.792a3,3,0,0,0-4.242,0L4.724,9.149A2.993,2.993,0,0,0,2,12.12v9.6a3,3,0,0,0,3,3H20.6a3,3,0,0,0,3-3V19.86A3,3,0,0,0,26,16.92ZM10.928,4.642a1.8,1.8,0,0,1,2.545,0L17.952,9.12H6.448ZM20.6,23.52H5a1.8,1.8,0,0,1-1.8-1.8v-9.6A1.8,1.8,0,0,1,5,10.32H20.6a1.8,1.8,0,0,1,1.8,1.8v1.8H20.6a3,3,0,1,0,0,6h1.8v1.8a1.8,1.8,0,0,1-1.8,1.8Zm2.4-4.8H20.6a1.8,1.8,0,0,1,0-3.6H23a1.8,1.8,0,0,1,0,3.6Z"
+                        transform="translate(129.5 288.185)"
+                        fill="#ccd0db"
+                      />
+                      <path
+                        id="Path_10939"
+                        data-name="Path 10939"
+                        d="M132.238,12.161a2.221,2.221,0,0,0-1.151-1.151,2.069,2.069,0,0,0-.844-.174h-4.409v5.17h-.644v.95h.644v.89h1.85v-.89h.7v-.95h-.7V12.6a.394.394,0,0,1,.106-.278.354.354,0,0,1,.271-.113h1.73a.8.8,0,1,1,0,1.595h-.511a.59.59,0,0,0-.294.053.8.8,0,0,0-.2.248l-.557,1.084h2.016a2.05,2.05,0,0,0,.844-.174,2.2,2.2,0,0,0,1.151-1.158A2.119,2.119,0,0,0,132.41,13a2.063,2.063,0,0,0-.173-.842"
+                        transform="translate(11.09 290.766)"
+                        fill="#ccd0db"
+                      />
+                    </g>
+                  </svg>
+                  Old Staking
+                </a>
+              </li>
             </ul>
           </div>
           <div class="dash-navmid2">
@@ -703,9 +703,9 @@ export default function Direct() {
                         return (
                           <>
                             {new Date().toLocaleString() >=
-                            new Date(
-                              item?.startDate * 1000
-                            ).toLocaleString() ? (
+                              new Date(
+                                item?.startDate * 1000
+                              ).toLocaleString() ? (
                               <div class="stake-card1">
                                 <div class="scard-head"></div>
                                 <p class="live">Live</p>
@@ -754,20 +754,20 @@ export default function Direct() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. $
+                                    Min. 
                                     {item.minUserTokenStake.length > 8
                                       ? (
-                                          parseFloat(item.minUserTokenStake) /
-                                          1e18
-                                        ).toString()
+                                        parseFloat(item.minUserTokenStake) /
+                                        1e18
+                                      ).toString()
                                       : (parseFloat(item.minUserTokenStake)).toFixed(0)}{" "}
                                     P2PBIT - Max. {item.maxUserTokenStake.length > 8
                                       ? (
-                                          parseFloat(item.maxUserTokenStake) /
-                                          1e18
-                                        ).toString()
+                                        parseFloat(item.maxUserTokenStake) /
+                                        1e18
+                                      ).toString()
                                       : (parseFloat(item.maxUserTokenStake)).toFixed(0)}{" "}
-                                    P2PBIT Stakes are allowed per user 
+                                    P2PBIT Stakes are allowed per user
                                     {/* total Data */}
                                   </p>
                                 </div>
@@ -794,16 +794,22 @@ export default function Direct() {
                                         <div class="accordion-body">
                                           <ul>
                                             <li>
-                                              <span>APR:</span>
+                                              <span>Permitted:</span>
                                               <span>
-                                                {item?.rateOfInterest}%
+                                                {(item?.totalTokensForStake) / 1e18}
                                               </span>
                                             </li>
                                             <li>
-                                              <span>Locked Duration:</span>
+                                              <span>Staked:</span>
                                               <span>
-                                                {item?.duration} months
+                                                {item?.totalTokensStaked}
                                               </span>
+                                            </li>
+                                            <li>
+                                              <span>Started On:</span>
+                                              <span>{new Date(
+                                                item?.startDate * 1000
+                                              ).toLocaleString()}</span>
                                             </li>
                                           </ul>
                                           <ul class="stacking-contract">
@@ -813,9 +819,7 @@ export default function Direct() {
                                                   target="_blank"
                                                   href={`https://polygonscan.com/address/${tokenAddress}`}
                                                 >
-                                                  {tokenAddress?.slice(0, 5) +
-                                                    "****" +
-                                                    tokenAddress?.slice(-5)}
+                                                  Token Contract
                                                 </Link>
                                               </span>
 
@@ -824,14 +828,7 @@ export default function Direct() {
                                                   target="_blank"
                                                   href={`https://polygonscan.com/address/${item?.contractAddress}`}
                                                 >
-                                                  {item?.contractAddress?.slice(
-                                                    0,
-                                                    5
-                                                  ) +
-                                                    "****" +
-                                                    item?.contractAddress?.slice(
-                                                      -5
-                                                    )}
+                                                  Staking Contract
                                                 </Link>
                                               </span>
                                             </li>
@@ -845,9 +842,9 @@ export default function Direct() {
                             ) : null}
 
                             {new Date().toLocaleString() <
-                            new Date(
-                              item?.startDate * 1000
-                            ).toLocaleString() ? (
+                              new Date(
+                                item?.startDate * 1000
+                              ).toLocaleString() ? (
                               <div class="stake-card1">
                                 <div class="scard-head"></div>
                                 <p class="upcoming">Unlocked</p>
@@ -1014,9 +1011,9 @@ export default function Direct() {
                       {newData?.map((item, id) => {
                         console.log(
                           Number(ethers.utils.formatEther(item?.totalTokens)) +
-                            Number(
-                              ethers.utils.formatEther(item?.rateOfInterest)
-                            ),
+                          Number(
+                            ethers.utils.formatEther(item?.rateOfInterest)
+                          ),
                           "ii"
                         );
                         return (
@@ -1556,7 +1553,7 @@ export default function Direct() {
             Close
           </Button>
           <Button className="connect-wallet" auto onPress={() => write()}>
-            Submit 
+            Submit
           </Button>
         </Modal.Footer>
       </Modal>

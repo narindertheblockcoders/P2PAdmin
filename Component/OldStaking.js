@@ -806,19 +806,25 @@ export default function OldStaking() {
                                         class="accordion-collapse collapse show"
                                         data-bs-parent="#accordionExample"
                                       >
-                                        <div class="accordion-body">
+                                          <div class="accordion-body">
                                           <ul>
                                             <li>
-                                              <span>APR:</span>
+                                              <span>Permitted:</span>
                                               <span>
-                                                {item?.rateOfInterest}%
+                                                {(item?.totalTokensForStake)/1e18}
                                               </span>
                                             </li>
                                             <li>
-                                              <span>Locked Duration:</span>
+                                              <span>Staked:</span>
                                               <span>
-                                                {item?.duration} months
+                                                {item?.totalTokensStaked}
                                               </span>
+                                            </li>
+                                            <li>
+                                              <span>Started On:</span>
+                                              <span>{new Date(
+                                                item?.startDate * 1000
+                                              ).toLocaleString()}</span>
                                             </li>
                                           </ul>
                                           <ul class="stacking-contract">
@@ -828,9 +834,7 @@ export default function OldStaking() {
                                                   target="_blank"
                                                   href={`https://polygonscan.com/address/${tokenAddress}`}
                                                 >
-                                                  {tokenAddress?.slice(0, 5) +
-                                                    "****" +
-                                                    tokenAddress?.slice(-5)}
+                                                  Token Contract
                                                 </Link>
                                               </span>
 
@@ -839,14 +843,7 @@ export default function OldStaking() {
                                                   target="_blank"
                                                   href={`https://polygonscan.com/address/${item?.contractAddress}`}
                                                 >
-                                                  {item?.contractAddress?.slice(
-                                                    0,
-                                                    5
-                                                  ) +
-                                                    "****" +
-                                                    item?.contractAddress?.slice(
-                                                      -5
-                                                    )}
+                                                  Staking Contract
                                                 </Link>
                                               </span>
                                             </li>
