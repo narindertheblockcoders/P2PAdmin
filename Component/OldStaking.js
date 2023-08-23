@@ -78,7 +78,7 @@ export default function OldStaking() {
 
   const { write: write } = useContractWrite({
     mode: "args",
-    address: "0x6b76d449940ab5ef852a6fa2c232223d3cb9b4a6",
+    address: "0x7FDe150895c577B14942963a105C747728F17f1D",
     abi: ContractInterface,
     functionName: "startNewStaking",
     overrides: {
@@ -277,13 +277,24 @@ export default function OldStaking() {
 
   console.log(newData, "newData is here");
 
-  async function getIdForStake(item) {
-    console.log(roi, "roi");
-    console.log(item, "id of stake");
-    setContractAddress(item?.contractAddress);
-    setId(item?.id);
-    Approval();
-    return;
+   async function getIdForStake(item) {
+ 
+    if (amount > parseFloat(ethers.utils.formatEther(item?.maxUserTokenStake))) {
+      alert('please enter a valid amount');
+      
+    } else if (amount < parseFloat(ethers.utils.formatEther(item?.minUserTokenStake))) {
+      alert('please enter a valid amount');
+      
+    } else {
+
+      console.log(roi, "roi");
+      console.log(item, "id of stake");
+      setContractAddress(item?.contractAddress);
+      setId(item?.id);
+      Approval();
+      return;
+    }
+
   }
 
   const { write: Withdraw } = useContractWrite({
@@ -339,12 +350,12 @@ export default function OldStaking() {
 
   async function stakeAddData(e) {
 
-    localStorage.setItem("userId",e)
+    localStorage.setItem("userId", e)
     router.push("/stakeAddData/");
   }
 
 
-  async function modalReloadFn (){
+  async function modalReloadFn() {
     setShow4(false)
     window.location.reload()
   }
@@ -709,11 +720,11 @@ export default function OldStaking() {
                         return (
                           <>
                             {new Date().toLocaleString() >=
-                            new Date(
-                              item?.startDate * 1000
-                            ).toLocaleString() ? (
+                              new Date(
+                                item?.startDate * 1000
+                              ).toLocaleString() ? (
                               <div
-                              onClick={()=>stakeAddData(item?.userId)}
+                                onClick={() => stakeAddData(item?.userId)}
                                 class="stake-card1"
                                 style={{ cursor: "pointer" }}
                               >
@@ -764,24 +775,24 @@ export default function OldStaking() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. 
+                                    Min.
                                     {item.minUserTokenStake.length > 8
                                       ? (
-                                          parseFloat(item.minUserTokenStake) /
-                                          1e18
-                                        ).toString()
+                                        parseFloat(item.minUserTokenStake) /
+                                        1e18
+                                      ).toString()
                                       : parseFloat(
-                                          item.minUserTokenStake
-                                        ).toFixed(0)}{" "}
-                                    P2PBIT - Max. 
+                                        item.minUserTokenStake
+                                      ).toFixed(0)}{" "}
+                                    P2PBIT - Max.
                                     {item.maxUserTokenStake.length > 8
                                       ? (
-                                          parseFloat(item.maxUserTokenStake) /
-                                          1e18
-                                        ).toString()
+                                        parseFloat(item.maxUserTokenStake) /
+                                        1e18
+                                      ).toString()
                                       : parseFloat(
-                                          item.maxUserTokenStake
-                                        ).toFixed(0)}{" "}
+                                        item.maxUserTokenStake
+                                      ).toFixed(0)}{" "}
                                     P2PBIT Stakes are allowed per user
                                     {/* total Data */}
                                   </p>
@@ -806,18 +817,19 @@ export default function OldStaking() {
                                         class="accordion-collapse collapse show"
                                         data-bs-parent="#accordionExample"
                                       >
-                                          <div class="accordion-body">
+                                        <div class="accordion-body">
                                           <ul>
                                             <li>
                                               <span>Permitted:</span>
                                               <span>
-                                                {(item?.totalTokensForStake)/1e18}
+                                                {item?.totalTokensForStake}
                                               </span>
                                             </li>
                                             <li>
                                               <span>Staked:</span>
                                               <span>
-                                                {item?.totalTokensStaked}
+                                                {item?.totalTokensStaked
+                                                }
                                               </span>
                                             </li>
                                             <li>
@@ -857,9 +869,9 @@ export default function OldStaking() {
                             ) : null}
 
                             {new Date().toLocaleString() <
-                            new Date(
-                              item?.startDate * 1000
-                            ).toLocaleString() ? (
+                              new Date(
+                                item?.startDate * 1000
+                              ).toLocaleString() ? (
                               <div class="stake-card1">
                                 <div class="scard-head"></div>
                                 <p class="upcoming">Unlocked</p>
@@ -1026,9 +1038,9 @@ export default function OldStaking() {
                       {newData?.map((item, id) => {
                         console.log(
                           Number(ethers.utils.formatEther(item?.totalTokens)) +
-                            Number(
-                              ethers.utils.formatEther(item?.rateOfInterest)
-                            ),
+                          Number(
+                            ethers.utils.formatEther(item?.rateOfInterest)
+                          ),
                           "ii"
                         );
                         return (
@@ -1582,8 +1594,8 @@ export default function OldStaking() {
         className="staking-modal"
       >
         <Modal.Body>
-          <h3 style={{ textAlign: "center", fontSize:"20px" }}>
-          Please wait for 2-3 min. for Staking Data          </h3>
+          <h3 style={{ textAlign: "center", fontSize: "20px" }}>
+            Please wait for 2-3 min. for Staking Data          </h3>
         </Modal.Body>
         <Modal.Footer>
           <Button

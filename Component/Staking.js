@@ -265,12 +265,23 @@ export default function Direct() {
   console.log(newData, "newData is here");
 
   async function getIdForStake(item) {
-    console.log(roi, "roi");
-    console.log(item, "id of stake");
-    setContractAddress(item?.contractAddress);
-    setId(item?.id);
-    Approval();
-    return;
+ 
+    if (amount > parseFloat(ethers.utils.formatEther(item?.maxUserTokenStake))) {
+      alert('please enter a valid amount');
+      
+    } else if (amount < parseFloat(ethers.utils.formatEther(item?.minUserTokenStake))) {
+      alert('please enter a valid amount');
+      
+    } else {
+
+      console.log(roi, "roi");
+      console.log(item, "id of stake");
+      setContractAddress(item?.contractAddress);
+      setId(item?.id);
+      Approval();
+      return;
+    }
+
   }
 
   const { write: Withdraw } = useContractWrite({
@@ -754,7 +765,7 @@ export default function Direct() {
                                 </div>
                                 <div class="stak-min">
                                   <p>
-                                    Min. 
+                                    Min.
                                     {item.minUserTokenStake.length > 8
                                       ? (
                                         parseFloat(item.minUserTokenStake) /
