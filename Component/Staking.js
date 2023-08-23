@@ -14,6 +14,8 @@ console.log(ContractInterface, "contract for create new staking");
 import { parseEther } from "viem";
 import { Modal, Button, Table, Tooltip } from "@nextui-org/react";
 import { ethers } from "ethers";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 // let stakeId;
 let userAddress;
@@ -267,10 +269,10 @@ export default function Direct() {
   async function getIdForStake(item) {
  
     if (amount > parseFloat(ethers.utils.formatEther(item?.maxUserTokenStake))) {
-      alert('please enter a valid amount');
+      toast.error('Please enter a valid amount');
       
     } else if (amount < parseFloat(ethers.utils.formatEther(item?.minUserTokenStake))) {
-      alert('please enter a valid amount');
+      toast.error('Please enter a valid amount');
       
     } else {
 
@@ -342,6 +344,8 @@ export default function Direct() {
         <CircularProgress color="inherit" />
       </Backdrop>
       <section class="dashboard" id="stake-dashimp">
+      <ToastContainer />
+
         <div class="dashboard-left">
           <div class="dash-navhead">
             <a class="dashnav-a" href="index.html">
